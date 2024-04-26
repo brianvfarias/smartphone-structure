@@ -12,14 +12,19 @@ public class Browser {
   private List<String> history = new ArrayList<String>();
 
   public void search(String url) {
-    HttpClient client = HttpClient.newHttpClient();
-    HttpRequest req = HttpRequest.newBuilder()
-        .uri(new URI(url))
-        .GET()
-        .build();
+    try {
+      HttpClient client = HttpClient.newHttpClient();
+      HttpRequest req = HttpRequest.newBuilder()
+          .uri(new URI(url))
+          .GET()
+          .build();
 
-    HttpResponse<String> res = client.send(req, BodyHandlers.ofString());
-    System.out.println(res.body());
+      HttpResponse<String> res = client.send(req, BodyHandlers.ofString());
+      System.out.println(res.body());
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
   }
 
   public List<String> getHistory() {

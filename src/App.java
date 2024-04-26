@@ -15,12 +15,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         // MusicPlayer mp = new MusicPlayer();
         // mp.musicplayer();
-        try {
-            Browser bw = new Browser();
-            bw.search("http://www.omdbapi.com/?i=tt3896198&apikey=e4bbf2a7");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        Browser bw = new Browser();
+        bw.search("https://github.com/brianvfarias");
     }
 }
