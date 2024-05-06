@@ -28,9 +28,8 @@ public class Browser {
     }
   }
 
-  public void browse() {
+  public void browse(Scanner scan) {
 
-    Scanner scan = new Scanner(System.in);
     String keepSearching = "y";
     do {
       System.out.println("Do you want to search something? [Y/n]");
@@ -43,7 +42,6 @@ public class Browser {
       }
     } while (keepSearching.toLowerCase().equals("y"));
     System.out.println("Leaving browser");
-    scan.close();
   }
 
   public List<String> getHistory() {

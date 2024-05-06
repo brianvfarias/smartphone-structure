@@ -45,7 +45,7 @@ public class MusicPlayer {
     }
   }
 
-  public void musicplayer() {
+  public void musicplayer(Scanner scan) {
     List<String> availableMusics = this.getFileNames();
     System.out.println("Type the number of the music you wanna hear to play it");
     int c = 1;
@@ -54,14 +54,14 @@ public class MusicPlayer {
       c++;
     }
 
-    Scanner scan = new Scanner(System.in);
+    // Scanner scan = new Scanner(System.in);
     String musicLocation = availableMusics.get(scan.nextInt() - 1);
     this.playMusic(musicLocation);
     String input = "";
     while (!input.toUpperCase().equals("Q")) {
       System.out.println("P = play, S = stop, R = reset, Q = quit");
       System.out.print("Enter your choice ");
-      input = scan.next();
+      input = scan.next().toUpperCase();
 
       switch (input) {
         case ("P"):
@@ -82,7 +82,6 @@ public class MusicPlayer {
           System.out.println("Not a valid input");
           // break;
       }
-      scan.close();
       // clip.start();
     }
   }

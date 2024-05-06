@@ -3,7 +3,6 @@ package com.structure.phone;
 import java.util.Scanner;
 
 public class Phone {
-  // private static String phoneNumber = "+55 85 99789-2684";
 
   public void call(String callTo) {
     System.out.println("Calling to " + callTo);
