@@ -15,13 +15,13 @@ public class App {
         Scanner scan = new Scanner(System.in);
         System.out.println(
                 "Type the functionality you wish to use now\n(ph) Phone\n(mp) Music Player\n(bw) Browser\n(ex) Exit App");
-        String functionalityNumber = scan.next();
+        String functionalityNumber = "";
         do {
-
+            functionalityNumber = scan.next();
             if (functionalityNumber.contains("ex")) {
                 System.out.println("Leaving app");
             } else if (functionalityNumber.contains("ph")) {
-                System.out.println(phone);
+                phone.managePhone(scan);
             } else if (functionalityNumber.contains("mp")) {
                 mp.musicplayer(scan);
             } else if (functionalityNumber.contains("bw")) {
@@ -31,7 +31,6 @@ public class App {
             }
             System.out.println(
                     "Type the functionality you wish to use now\n(ph) Phone\n(mp) Music Player\n(bw) Browser\n(ex) Exit App");
-            functionalityNumber = scan.next();
         } while (!functionalityNumber.equals("ex"));
         scan.close();
     }
